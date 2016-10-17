@@ -1,0 +1,30 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ static_url('css/test.css') }}">
+</head>
+<body>
+    <h2>Hello Landpack</h2>
+    {% if page > 0 %}
+    <a href="page?page={{ page-1 }}">Pre</a>
+    {% else %}
+    <a href="javascript:void(0);" disabled="true">Pre</a>
+    {% end %}
+
+    {% if page < max-1 %}
+    <a href="page?page={{ page+1 }}">Next</a>
+    {% else %}
+
+    <a href="javascript:void(0);" disabled="true">Next</a>
+    {% end %}
+    <table>
+        {% for j in data %}
+        <tr>
+               <th> {{ j[0]}} </th>
+               <th> {{ j[1]}} </th>
+               <th> {{ j[2]}} </th>
+               <th> {{ j[3]}} </th>
+        </tr>
+        {% end %}
+    </table>
+</body>
+</html>
